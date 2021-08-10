@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-html-semantic-content</title>
+</head>
+<body>
+    <h1>02-html-semantic-content</h1>
+
+    <h2>outlining bei verschachtelungen</h2>
+
+    <h3>alles in einer Ebene</h3>
+    <pre>
+        Headings sind in Header und Footer größer als in anderen Tags
+    </pre>
+
+    <header>header<h1>H1</h1></header>
+    <nav>nav<h1>H1</h1></nav>
+    <section>section<h1>H1</h1></section>
+    <article>article<h1>H1</h1></article>
+    <aside>aside<h1>H1</h1></aside>
+    <footer>footer<h1>H1</h1></footer>
+
+    <hr>
+
+    <h3>verschachtelte sections</h3>
+
+    <section>section
+        <h2>section h2</h2>
+        <header>header
+            <h2>header h2</h2>
+        </header>        
+        <section>section
+            <h2>section h2</h2>
+            <header>header
+                <h2>header h2</h2>
+            </header>
+        </section>
+    </section>
+
+    <hr>
+
+    <h3>articles in section</h3>
+
+    <section>
+        <h1>heading 1</h1>
+        <h2>section h2</h2>
+        section
+        <article>
+            <h1>heading 1</h1>
+            <h2>article h2</h2>
+            article
+        </article>
+        <article>
+            <h1>heading 1</h1>
+            <h2>article h2</h2>
+            article
+        </article>
+    </section>
+
+       
+
+    <h2>layout von semantic tags mit css grid</h2>
+
+    
+</body>
+</html>
