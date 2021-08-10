@@ -47,43 +47,37 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - [ ] Lab:
 - [ ] Commit:
 
-HTML Auffrischung
-
-HTML Syntax
-
-Neuerungen in HTML5
-
-HTML Struktur der Kategorien
-
-Semantisches HTML
-
-Cascading Style Sheets (CSS)
-
-CSS Selektoren
-
-CSS Pseudoklassen
-
-Abgerundete Ecken
-Farbverläufe und Schatten
-Transitions
-Animationen
-Variable Schriften
-CSS Funktionen und Regeln
-Spezifität
-Formulare in HTML erstellen
-Eingabefelder
-Formular Attribute
-Formulare validieren
-Eigene Vorschlagslisten (datalist)
-Medien in HTML integrieren
-Audio- und Video-Elemente
-Audio- und Video APIs
-Canvas-Grafiken und Animationen erstellen
-Icons erstellen und verwenden
-Layout Grundlagen
-JavaScript APIs verwenden
-Geolocation API
-FileReader API
-Web Worker API
-Web Storage API (DOM-Storage)
-XmlHttpRequest 2 API (AJAX)
+- [x] HTML Auffrischung
+- [x] HTML Syntax
+- [ ] Neuerungen in HTML5
+  - [ ] neue APIs (Video, Audio, Canvas) (siehe die weiteren Punkte in Agenda)
+  - [x] keine schließenden Tags bei manchen Tag-Paaren
+  - [ ] Semantisches HTML
+  - [ ] neue input-types (siehe Punkt zu Formularen)
+- [ ] Cascading Style Sheets (CSS)
+- [ ] CSS Selektoren
+- [ ] CSS Pseudoklassen
+- [ ] Abgerundete Ecken
+- [ ] Farbverläufe und Schatten
+- [ ] Transitions
+- [ ] Animationen
+- [ ] Variable Schriften
+- [ ] CSS Funktionen und Regeln
+- [ ] Spezifität
+- [ ] Formulare in HTML erstellen
+- [ ] Eingabefelder
+- [ ] Formular Attribute
+- [ ] Formulare validieren
+- [ ] Eigene Vorschlagslisten (datalist)
+- [ ] Medien in HTML integrieren
+- [ ] Audio- und Video-Elemente
+- [ ] Audio- und Video APIs
+- [ ] Canvas-Grafiken und Animationen erstellen
+- [ ] Icons erstellen und verwenden
+- [ ] Layout Grundlagen
+- [ ] JavaScript APIs verwenden
+- [ ] Geolocation API
+- [ ] FileReader API
+- [ ] Web Worker API
+- [ ] Web Storage API (DOM-Storage)
+- [ ] XmlHttpRequest 2 API (AJAX)

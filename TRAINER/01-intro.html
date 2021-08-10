@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-intro</title>
+    <style>
+        h1 {
+            border: thin solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>01-intro</h1>
+    <pre>
+        Hinter einem HTML-Tag steht immer ein HTML Element (ein JS Objekt)
+        CSS-Stile sind bei diesen HTML Element in der Eigenschaft 'style' zusammengefasst.
+        Schauen Sie beim Objekt window im der Konsole nach mehr Infos nach.
+        Beim globalen Objekt sind auch die Konstruktoren von HTML Element und viele weitere Objekte gesammelt.
+    </pre>
+    <script>
+        // die Konstruktoren für HTML Elemente aus dem globalen Objekt kann man hier nutzen:
+        // let myh1 = new HTMLHeadingElement(); // Uncaught TypeError: Illegal constructor
+        // console.log('myh1 : ', myh1);
+        // für manche HTML Elemente gibt es aber eigene Konstruktoren
+        let myImg = new Image();
+        console.log('myImg: ', myImg);
+    </script>
+</body>
+</html>
