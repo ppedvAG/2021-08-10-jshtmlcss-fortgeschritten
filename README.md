@@ -52,11 +52,13 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - [ ] Neuerungen in HTML5
   - [ ] neue APIs (Video, Audio, Canvas) (siehe die weiteren Punkte in Agenda)
   - [x] keine schließenden Tags bei manchen Tag-Paaren
-  - [ ] Semantisches HTML
+  - [x] Semantisches HTML
   - [ ] neue input-types (siehe Punkt zu Formularen)
-- [ ] Cascading Style Sheets (CSS)
+- [x] Cascading Style Sheets (CSS) Auffrischung
 - [ ] CSS Selektoren
-- [ ] CSS Pseudoklassen
+  - [ ] klassischen Selektoren
+  - [ ] CSS Pseudoklassen
+  - [ ] Pseudoelemente
 - [ ] Abgerundete Ecken
 - [ ] Farbverläufe und Schatten
 - [ ] Transitions
@@ -75,6 +77,9 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - [ ] Canvas-Grafiken und Animationen erstellen
 - [ ] Icons erstellen und verwenden
 - [ ] Layout Grundlagen
+  - [ ] CSS Box
+  - [x] Grid
+  - [ ] Flex
 - [ ] JavaScript APIs verwenden
 - [ ] Geolocation API
 - [ ] FileReader API
