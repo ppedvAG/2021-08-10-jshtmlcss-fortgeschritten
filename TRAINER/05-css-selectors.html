@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-css-selectors</title>
+    <style>
+        /* Id-Selektor */
+        #container {
+            color: yellow;
+        }
+        div {
+            color: green !important;
+        }
+        p {
+            color: blue;
+        }
+        div p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>05-css-selectors</h1>
+    <pre>
+siehe Folien CSS > Selectors.
+manche CSS-Selectoren haben entsprechende JS-Methoden. Z.B. id-Selektor und getElementById().
+Spezifität: je spezifischer (konkreter) der Selektor, desto stärker die Spezifität.
+Am stärksten sind die Anweisungen mit '!important'.     
+    </pre>
+    <div id=container>
+        ebene 1
+        <p>par in div1</p>
+        <div>
+            ebene 2
+            <p>par in div2</p>
+        </div>
+    </div>
+
+    <script>
+        let allParagraphs = document.querySelectorAll('p')
+        console.log('allParagraphs :>> ', allParagraphs);
+        let allPsInContainer = document.querySelectorAll('#container p')
+        console.log('allPsInContainer :>> ', allPsInContainer);
+        let allChildrenOfContainer = document.querySelectorAll('#container > *')
+        console.log('allChildrenOfContainer :>> ', allChildrenOfContainer);
+
+        document.getElementById()
+        document.getElementsByClassName()
+    </script>
+
+</body>
+</html>

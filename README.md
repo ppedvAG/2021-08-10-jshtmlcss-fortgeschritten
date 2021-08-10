@@ -56,16 +56,16 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [ ] neue input-types (siehe Punkt zu Formularen)
 - [x] Cascading Style Sheets (CSS) Auffrischung
 - [ ] CSS Selektoren
-  - [ ] klassischen Selektoren
-  - [ ] CSS Pseudoklassen
-  - [ ] Pseudoelemente
+  - [x] klassischen Selektoren
+  - [x] CSS Pseudoklassen
+  - [x] Pseudoelemente
+  - [x] Spezifität
 - [ ] Abgerundete Ecken
 - [ ] Farbverläufe und Schatten
 - [ ] Transitions
 - [ ] Animationen
 - [ ] Variable Schriften
 - [ ] CSS Funktionen und Regeln
-- [ ] Spezifität
 - [ ] Formulare in HTML erstellen
 - [ ] Eingabefelder
 - [ ] Formular Attribute
