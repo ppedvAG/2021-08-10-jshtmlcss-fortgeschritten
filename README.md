@@ -77,7 +77,8 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - [ ] Canvas-Grafiken und Animationen erstellen
 - [ ] Icons erstellen und verwenden
 - [ ] Layout Grundlagen
-  - [ ] CSS Box
+  - [x] CSS Box
+  - [x] inline, block, inline-block
   - [x] Grid
   - [ ] Flex
 - [ ] JavaScript APIs verwenden

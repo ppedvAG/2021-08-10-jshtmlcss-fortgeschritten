@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-css-inline-block</title>
+    <style>
+        p, span {
+            border: thin solid;
+        }
+
+        .punkt2 {
+            margin: 20px;
+            padding: 20px;
+        }
+        .punkt3 {
+            width: 40%;
+            height: 50px;
+        }
+        p.punkt4 {
+            display: inline;
+        }
+        span.punkt4 {
+            display: block;
+        }
+        .punkt5 {
+            display: inline-block; 
+            height: 50px;
+            width: 50px;            
+        }
+
+    </style>
+</head>
+<body>
+    <h1>04-css-inline-block</h1>
+    <h2>1. inline vs block</h2>
+    <pre>
+block-Elemente sind so breit wie möglich (100% Breite vom Elternelement)
+inline-Elemente sind so breit wie nötig (für die Inhalte)
+    </pre>
+    <p>paragraph</p>
+    <p>paragraph</p>
+    <p>paragraph</p>
+    <span>span</span><span>span</span><span>span</span>
+
+    <hr>
+    <h2>2. css box bei inline und block</h2>
+    <pre>
+inline-Elemente ignorieren margin-top und margin-bottom        
+    </pre>
+    <p class="punkt2">paragraph</p>
+    <p class="punkt2">paragraph</p>
+    <p class="punkt2">paragraph</p>
+    <span class="punkt2">span</span><span class="punkt2">span</span><span class="punkt2">span</span>
+
+    <hr>
+
+    <h2>3. breite und höhe</h2>
+    <pre>
+inline-Elemente ignorieren Breite und Höhe        
+    </pre>
+    <p class="punkt3">paragraph</p>
+    <p class="punkt3">paragraph</p>
+    <p class="punkt3">paragraph</p>
+    <span class="punkt3">span</span><span class="punkt3">span</span><span class="punkt3">span</span>
+
+    <hr>
+
+    <h2>4. andere Werte für display</h2>
+    <p class="punkt4">paragraph</p>
+    <p class="punkt4">paragraph</p>
+    <p class="punkt4">paragraph</p>
+    <span class="punkt4">span</span><span class="punkt4">span</span><span class="punkt4">span</span>
+    
+    <hr>
+
+    <h2>5. display: inline-block</h2>
+    <pre>
+inline-block vereint Vorteile von beiden Eigenschaften:
+- Angaben für Breite und Höhe 
+- Möglichkeit, in gleichen Zeile zu stehen
+Nachteil
+- Breite und Höhe haben Priorität über Breite von Ihalten      
+    </pre>
+    <p class="punkt5">paragraph</p><p class="punkt5">paragraph</p><p class="punkt5">paragraph</p>
+    <span class="punkt5">span</span><span class="punkt5">span</span><span class="punkt5">span</span>
+    <!-- 
+    p.punkt3{paragraph}*3
+    span.punkt3{span}*3 
+    -->
+</body>
+</html>
