@@ -40,7 +40,10 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - folien CSS.pdf > properties
 - demo [06-css-inhertinece.html](TRAINER/06-css-inhertinece.html)
 
+## M007 | CSS BOX, abgerundete Ecken
 
+- link <https://codepen.io/chriscoyier/pen/owBwKM>
+- demo [07-css-box.html](TRAINER/07-css-box.html)
 
 
 - [x] HTML Auffrischung
@@ -55,7 +58,7 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [ ] Transitions
   - [ ] Animationen
 - [x] Cascading Style Sheets (CSS) Auffrischung
-- [ ] inheritence bei CSS-Props
+- [x] inheritence bei CSS-Props
 - [ ] CSS Selektoren
   - [x] klassischen Selektoren
   - [x] CSS Pseudoklassen
