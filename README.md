@@ -35,17 +35,13 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   
 ## M001 | GETTING STARTED
 
-- [ ] Folien: DeinThema.pdf > Intro
-- [ ] Demo:
-- [ ] Lab:
-- [ ] Commit:
+## M006 | CSS INHERITENCE
 
-## MXXX | `name vom modul`
+- folien CSS.pdf > properties
+- demo [06-css-inhertinece.html](TRAINER/06-css-inhertinece.html)
 
-- [ ] Folien:
-- [ ] Demo:
-- [ ] Lab:
-- [ ] Commit:
+
+
 
 - [x] HTML Auffrischung
 - [x] HTML Syntax
@@ -54,27 +50,28 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] keine schließenden Tags bei manchen Tag-Paaren
   - [x] Semantisches HTML
   - [ ] neue input-types (siehe Punkt zu Formularen)
+  - [ ] Abgerundete Ecken
+  - [ ] Farbverläufe und Schatten
+  - [ ] Transitions
+  - [ ] Animationen
 - [x] Cascading Style Sheets (CSS) Auffrischung
+- [ ] inheritence bei CSS-Props
 - [ ] CSS Selektoren
   - [x] klassischen Selektoren
   - [x] CSS Pseudoklassen
   - [x] Pseudoelemente
   - [x] Spezifität
-- [ ] Abgerundete Ecken
-- [ ] Farbverläufe und Schatten
-- [ ] Transitions
-- [ ] Animationen
 - [ ] Variable Schriften
 - [ ] CSS Funktionen und Regeln
 - [ ] Formulare in HTML erstellen
-- [ ] Eingabefelder
-- [ ] Formular Attribute
-- [ ] Formulare validieren
-- [ ] Eigene Vorschlagslisten (datalist)
+  - [ ] Eingabefelder
+  - [ ] Formular Attribute
+  - [ ] Formulare validieren
+  - [ ] Eigene Vorschlagslisten (datalist)
 - [ ] Medien in HTML integrieren
-- [ ] Audio- und Video-Elemente
-- [ ] Audio- und Video APIs
-- [ ] Canvas-Grafiken und Animationen erstellen
+  - [ ] Audio- und Video-Elemente
+  - [ ] Audio- und Video APIs
+  - [ ] Canvas-Grafiken und Animationen erstellen
 - [ ] Icons erstellen und verwenden
 - [ ] Layout Grundlagen
   - [x] CSS Box
@@ -82,8 +79,8 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] Grid
   - [ ] Flex
 - [ ] JavaScript APIs verwenden
-- [ ] Geolocation API
-- [ ] FileReader API
-- [ ] Web Worker API
-- [ ] Web Storage API (DOM-Storage)
-- [ ] XmlHttpRequest 2 API (AJAX)
+  - [ ] Geolocation API
+  - [ ] FileReader API
+  - [ ] Web Worker API
+  - [ ] Web Storage API (DOM-Storage)
+  - [ ] XmlHttpRequest 2 API (AJAX)

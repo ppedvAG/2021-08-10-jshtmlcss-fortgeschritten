@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-css-inhertinece</title>
+    <style>
+        html {
+            font-size: 26px;
+            /* damit wurde die Einheit rem im Scop von diesem HTML-Dokument auf 26px, also 1rem = 26px */
+            color: blue;
+            background-color: lemonchiffon;
+        }
+
+        #myDiv {
+            font-size: 36px;
+            color:lightpink;
+            background-color: lightslategrey;
+            border: medium solid; 
+            /* Werte für Prop border werden per default nicht vererbt.
+            Man kann aber die Kindelemente dazu zwingen - Wert 'inherit' */
+        }
+        p {
+            /* font-size: inherit; */
+            /* font-size: initial; */
+            /* font-size: 1em; */
+            /* font-size: 20px; */
+            /* 1em bedeutet, die Schriftgröße vom Elternelement. Nützlich, in Kombination mit Koeffizienten, 
+            wie 0.5em, und bei Größenangaben bei anderen Props, die relativ zu font-size sein müssen */
+            border: inherit;
+            padding: 1em;
+            /* hat das aktuelle Element keine eigene schrift-größen, dann ist 1em gleich der Schriftgröße vom Elternelement */
+        }
+
+    </style>
+</head>
+text direkt in html tag
+<body>    
+    <h1>06-css-inhertinece</h1>
+    <pre>
+Von wo kommen die CSS-Stile für Elemente?
+    - vom Browser (defaults). Wie berechnet der Browser die Stile?
+        - manche vererben die Stile von Elternelementen
+        - manche Stile sind relativ default-Werten von anderen Elementen (z.B. je größer die Schrift bei html, desto größer ist sie bei h1)
+    - vom Entwickler (diese sind stärker als die vom browser). Wie werden diese weiter berechnet?
+        - anhand von Spezifität 
+        - anhand von Reihenfolge von CSS-Regeln
+Kindelemente können die CSS-Stile von ihren Elternelementen vererben
+
+z.B. bei Eigenschaft font-size haben viele Elemente default-Wert bei 16px;
+Dieser Default wird aber anhand von einem anderen berechnet und nämlich 'vererbe vom Elternelement' (inherit);
+Diese Vererbung kann man zurück zum 'initial'-Wert zurücksetzen
+
+Werte für Prop border werden per default nicht vererbt.
+Man kann aber die Kindelemente dazu zwingen - Wert 'inherit'
+
+Sehr hilfreich sind die DevTools beim Browser, Bereich 'Elements'.
+    </pre>
+
+    text direkt in body tag
+    <div id="myDiv">division
+        <p>paragraph
+            <span>span</span>
+        </p>
+    </div>
+</body>
+</html>
