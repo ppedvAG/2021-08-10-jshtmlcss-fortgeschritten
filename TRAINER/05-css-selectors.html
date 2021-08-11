@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,17 +11,23 @@
         #container {
             color: yellow;
         }
+
         div {
             color: green !important;
         }
+
         p {
             color: blue;
         }
+
         div p {
             color: red;
         }
+
+
     </style>
 </head>
+
 <body>
     <h1>05-css-selectors</h1>
     <pre>
@@ -38,6 +45,10 @@ Am stärksten sind die Anweisungen mit '!important'.
         </div>
     </div>
 
+
+
+
+
     <script>
         let allParagraphs = document.querySelectorAll('p')
         console.log('allParagraphs :>> ', allParagraphs);
@@ -46,9 +57,12 @@ Am stärksten sind die Anweisungen mit '!important'.
         let allChildrenOfContainer = document.querySelectorAll('#container > *')
         console.log('allChildrenOfContainer :>> ', allChildrenOfContainer);
 
-        document.getElementById()
-        document.getElementsByClassName()
+        // document.getElementById()
+        // document.getElementsByClassName()
+
     </script>
 
+
 </body>
+
 </html>
