@@ -45,6 +45,11 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - link <https://codepen.io/chriscoyier/pen/owBwKM>
 - demo [07-css-box.html](TRAINER/07-css-box.html)
 
+## M008 | FORMS
+
+- demo [08-forms.html](TRAINER/08-forms.html)
+
+## M009 | FLEXBOX
 
 - [x] HTML Auffrischung
 - [x] HTML Syntax
@@ -53,7 +58,7 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] keine schließenden Tags bei manchen Tag-Paaren
   - [x] Semantisches HTML
   - [ ] neue input-types (siehe Punkt zu Formularen)
-  - [ ] Abgerundete Ecken
+  - [x] Abgerundete Ecken
   - [ ] Farbverläufe und Schatten
   - [ ] Transitions
   - [ ] Animationen

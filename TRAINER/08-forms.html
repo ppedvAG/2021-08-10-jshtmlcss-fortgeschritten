@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-forms</title>
+    <style>
+        #hinweis {
+            display: none;
+        }
+        input {
+            display: block;
+            width: 400px;
+            box-sizing: border-box;
+        }
+        :hover {
+            border-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>08-forms</h1>
+    <pre>
+        verschiedene Typen bei Inputs bringen 
+        - minimale Validierung mit
+        - Restrictions bei der Eingabe
+        - Hinweise (tooltips)
+
+        Vilidität wird bei Submit geprüft
+    </pre>
+
+    <form action="#" onsubmit="handleSubmit()">
+
+        <h2>text</h2>
+        <input type="text" name="" id="">
+
+        <h2>number</h2>
+        <pre>
+    keine buchtaben möglich, außer 'e'
+        </pre>
+        <input type="number" name="" id="">
+
+        <h2>checkbox</h2>
+        <input type="checkbox" name="" id="">
+
+        <h2>Radio</h2>
+        <input type="radio" name="r1" id="">
+        <input type="radio" name="r1" id="">
+        <input type="radio" name="r1" id="">
+
+
+        <input type="file" name="" id="">
+
+        <input type="date" name="" id="">
+        <input type="datetime" name="" id="">
+        <input type="datetime-local" name="" id="">
+        <input type="month" name="" id="">
+        <input type="week" name="" id="">
+        <input type="time" name="" id="">
+
+
+        <input type="url" name="" id="">
+
+        <h2>Hinweise für Benutzer</h2>
+        <pre>
+
+        </pre>
+        <input id="test" type="text" title="hinweis durch title" placeholder="muster für die eingabe"
+            value="default value" minlength="5">
+
+        <div id="hinweis"></div>
+
+
+        <button>submit</button>
+
+    </form>
+
+    <script>
+        let testId = document.getElementById('test');
+        testId.addEventListener('change', handleChange)
+        function handleChange() {
+            let hinweisDiv = document.getElementById('hinweis');
+            if (!testId.validity.valid) {
+                hinweisDiv.style.display = 'block';
+                hinweisDiv.textContent = 'die eingabe war falsch';
+                hinweisDiv.style.color = 'red';
+            } else {
+                hinweisDiv.style.display = 'none';
+            }
+
+
+        }
+        function handleSubmit() {
+
+        }
+    </script>
+</body>
+
+</html>
