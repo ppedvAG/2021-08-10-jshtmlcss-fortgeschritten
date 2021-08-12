@@ -1,113 +1,148 @@
 <!doctype html>
 <html lang="de">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- von w3s -->
     <style>
-      audio{color: lightgreen;}
-
+        audio {
+            color: lightgreen;
+        }
     </style>
+</head>
 
-  </head>
-  <body >
-    <audio id="test1" controls>
-      <source src="Media/testsound01.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-       
-    </audio> 
+<body>
+    <h1>Audio API</h1>
 
-    <br><br>
+    <h2>Intro</h2>
+    <pre>
+ohne 'controls' ist Audio nicht sichtbar
+    </pre>
 
-    <!-- a download="der neue Name der Download-Datei" -->
-    <a href="media/testsound01.mp3" download="klingelingeling"><input type="button" value="Download"></a>
-
-    <br /><hr /><br />
-    
-
-    <!-- LOOP / AUTOPLAY BEISPIEL -->
-    <audio id="audio"  loop > <!-- loop = wiederholt den Track; autoplay = spielt automatisch ab -->
-
-      <source src="media/testsound01.mp3" type="audio/mpeg" />
-
+    <audio>
+        <source src="media/testsound01.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 
-    <br />
-    <button onclick="playMe()">Abspielen/Pausieren</button>
+    <br>
+    <audio controls>
+        <source src="media/testsound01.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
     <hr>
-    <br><br>
 
-    <audio controls>
-      <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp4" type='audio/mp4' />
-      <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga" type='audio/ogg; codecs=vorbis' />
-      <p>Your user agent does not support the HTML5 Audio element.</p>
+    <h2>downloading audio files</h2>
+    <pre>
+        Beim Downlaoden in File-Protokol wird ein Audio-Element in der Mitte von Viewport angezeigt.
+        attribut download="der neue Name der Download-Datei".
+        Beim Klick auf Download, wenn die Datei vom Server geliefert wird, wird downlaoding-Fenster vom Browser geöffnet. 
+    </pre>
+
+    <a href="media/testsound01.mp3" download="klingelingeling"><input type="button" value="Download"></a>
+
+    <hr />
+
+    <h2>LOOP / AUTOPLAY BEISPIEL</h2>
+    <pre>
+        attribut loop
+        loop = wiederholt den Track; 
+        autoplay = spielt automatisch ab
+        autoplay ist bei browser oft auf 'blockiert' oder 'eingeschränkt' gesetzt
+    </pre>
+
+    <audio id="audio" autoplay controls>
+        <!-- <audio id="audio" loop> -->
+        <source src="media/testsound01.mp3" type="audio/mpeg" />
     </audio>
+    <br>
+    <button onclick="playMe()">Abspielen/Pausieren</button>
+    <script>
+        // spielt Loop onclick
+        var audioEle = document.getElementById("audio");
+        function playMe() {
+            audioEle.volume = 0.1;
+            if (audioEle.paused) { audio.play() }
+            else { audio.pause(); }
+        }
+    </script>
+    <hr>
 
+    <h2>Mehrere Quellenangaben</h2>
+    <pre>
+        bei Angabe von mehreren Quellen wird die erste Datei abgespielt.
+        Das macht besonders Sinn, um mehrere Formate für die gleiche Datei anzubieten.
+    </pre>
+    <audio controls>
+        <source src="media/testsound01.wav" />
+        <source src="media/testsound01.mp3" type="audio/mpeg" />
+        <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga" type='audio/ogg; codecs=vorbis' />
+        <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp4" type='audio/mp4' />
+        <p>Your user agent does not support the HTML5 Audio element.</p>
+    </audio>
+    <hr>
 
-    <!-- Audiodatei, die von selbst startet, ohne Controls (PFUI, MACHT MAN NICHT!) -->
-    <!--
-      <audio autoplay loop><source src="Media/testsound01.mp3" type="audio/mpeg" /></audio>
-    -->   
-    <br><hr><br>
+    <h2>Repeat</h2>
+    <pre>
+    mit Hilfe von Events für audio Elemente kann man weitere Anweisungen ausführen:
+    - ended
+    - playing
+    - volumechange
+    - viele weitere https://www.w3schools.com/tags/ref_av_dom.asp
+    Methoden:
+    - play()
+    - pause()
+    - load() 
+    - ...
+    </pre>
+    <audio id="test2" controls>
+        <source src="media/testsound01.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
     <!-- die Audiodatei soll genau 2x abgespielt werden (oder so oft, wie im Script spezifiziert) -->
     <button onclick="repeat();">Repeat</button>
 
-
     <script>
-
-
-        // spielt Loop onclick
-        var audioEle = document.getElementById("audio");
-
-        function playMe() {
-
-          audioEle.volume = 0.1;
-
-          if (audioEle.paused) { audio.play() }
-          else { audio.pause(); }
+        function repeat() {
+            var track = document.getElementById('test2');
+            var i = 1;
+            track.play();
+            track.addEventListener('ended', function () {
+                while (i < 2) {
+                    this.play();
+                    i++;
+                }
+            }, false);
         }
 
+        // so könnte man die Audiodatei theoretisch auch starten (automatisch bei pageload):
+        //document.onload(document.getElementById('audio').play());
+
+        // Track soll genau 2x abspielen: 
+
+        /* mit Variablen für Loopcounter:
+              function repeat1(){
+                document.getElementById('test1').play();
+                var loopLimit = 2;
+                var loopCounter = 1;
+                document.getElementById('test1').addEventListener('ended', function(){
+                    if (loopCounter < loopLimit){
+                        this.play();
+                        loopCounter++;
+                    }
+                }, false);
+              }
+        */
 
 
-
-      // so könnte man die Audiodatei theoretisch auch starten (automatisch bei pageload):
-      //document.onload(document.getElementById('audio').play());
-
-
-// Track soll genau 2x abspielen: 
-
-/* mit Variablen für Loopcounter:
-      function repeat1(){
-        document.getElementById('test1').play();
-        var loopLimit = 2;
-        var loopCounter = 1;
-        document.getElementById('test1').addEventListener('ended', function(){
-            if (loopCounter < loopLimit){
-                this.play();
-                loopCounter++;
-            }
-        }, false); 
-      }
-*/
-
-      function repeat(){
-        var track = document.getElementById('test1');
-        var i = 1;
-        track.play();
-        track.addEventListener('ended', function(){
-          while(i < 2){
-            this.play(); 
-            i++;
-          }
-        }, false);
-      }
 
 
 
     </script>
 
-  </body>
+</body>
+
 </html>

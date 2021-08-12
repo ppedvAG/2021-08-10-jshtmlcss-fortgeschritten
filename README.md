@@ -101,8 +101,9 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] Formulare validieren
   - [x] Eigene Vorschlagslisten (datalist)
 - [ ] Medien in HTML integrieren
-  - [ ] Audio- und Video APIs
+  - [x] Audio- und Video APIs
   - [ ] Canvas-Grafiken und Animationen erstellen
+  - [ ] iFrames
 - [ ] Icons erstellen und verwenden
 - [x] Layout Grundlagen
   - [x] CSS Box
@@ -116,3 +117,4 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [ ] Web Worker API
   - [ ] Web Storage API (DOM-Storage)
   - [ ] XmlHttpRequest 2 API (AJAX)
+    - [ ] heute eher: fetch() API
