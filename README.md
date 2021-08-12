@@ -51,31 +51,39 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 
 ## M009 | FLEXBOX
 
+## M010 | GRADIENTS
+
+- demo [10-css-gradients.html](TRAINER/10-css-gradients.html)
+
+## M011 | EMMET
+
+## M012
+
 - [x] HTML Auffrischung
 - [x] HTML Syntax
 - [ ] Neuerungen in HTML5
-  - [ ] neue APIs (Video, Audio, Canvas) (siehe die weiteren Punkte in Agenda)
+  - [x] neue APIs (Video, Audio, Canvas) (siehe die weiteren Punkte in Agenda)
   - [x] keine schließenden Tags bei manchen Tag-Paaren
   - [x] Semantisches HTML
-  - [ ] neue input-types (siehe Punkt zu Formularen)
+  - [x] neue input-types (siehe Punkt zu Formularen)
   - [x] Abgerundete Ecken
   - [ ] Farbverläufe und Schatten
   - [ ] Transitions
   - [ ] Animationen
 - [x] Cascading Style Sheets (CSS) Auffrischung
 - [x] inheritence bei CSS-Props
-- [ ] CSS Selektoren
+- [x] CSS Selektoren (Queries)
   - [x] klassischen Selektoren
   - [x] CSS Pseudoklassen
   - [x] Pseudoelemente
   - [x] Spezifität
 - [ ] Variable Schriften
 - [ ] CSS Funktionen und Regeln
-- [ ] Formulare in HTML erstellen
-  - [ ] Eingabefelder
-  - [ ] Formular Attribute
-  - [ ] Formulare validieren
-  - [ ] Eigene Vorschlagslisten (datalist)
+- [x] Formulare in HTML erstellen
+  - [x] Eingabefelder
+  - [x] Formular Attribute
+  - [x] Formulare validieren
+  - [x] Eigene Vorschlagslisten (datalist)
 - [ ] Medien in HTML integrieren
   - [ ] Audio- und Video-Elemente
   - [ ] Audio- und Video APIs
@@ -85,7 +93,7 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] CSS Box
   - [x] inline, block, inline-block
   - [x] Grid
-  - [ ] Flex
+  - [x] Flex
 - [ ] JavaScript APIs verwenden
   - [ ] Geolocation API
   - [ ] FileReader API

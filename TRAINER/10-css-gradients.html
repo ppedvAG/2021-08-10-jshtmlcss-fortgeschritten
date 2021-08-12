@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-css-gradients</title>
+    <style>
+        body {
+            font-size: 2rem;
+        }
+        #container {
+            display: flex;
+            justify-content: space-around;
+            background-color: grey;
+            padding: 25px;
+        }
+
+        div[id^="bg"] {
+            width: 200px;
+            height: 200px;
+            margin: 25px auto;
+            background-color: lawngreen;
+        }
+
+        /* ohne weiteren Angeben verlaufen von oben nach unten */
+        #bg1 {
+            background: linear-gradient(blue, green, yellow, red);
+        }
+
+        /* durch Prozentangabe wird definiert, wieviel eine Farbe von dem verfügbaren Platz einnimmt */
+        #bg2 {
+            background: linear-gradient(blue 45%, green, yellow, red)
+        }
+
+        /* mit degrees wird Winken für Verlauf definiert */
+        #bg3 {
+            background: linear-gradient(60deg, blue, green, yellow, red)
+        }
+
+        /* ohne weiteren Angaben fängt radial-gradient in der Mitte an */
+        #bg4 {
+            background: radial-gradient(yellow, blue)
+        }
+
+        /* durch die Größen-Angabe wird definiert, in welchem Ausmaß der Verlauf von einer Farbe zur anderen den Platz einnimmt */
+        #bg5 {
+            background: radial-gradient(200px 50px, yellow, blue)
+        }
+
+        /* Mittelpunkt für Start des Verlaufs kann man mit der Syntax 'at Ypx Xpx' angeben */
+        #bg6 {
+            background: radial-gradient(200px 50px at 50px 150px, yellow, blue)
+        }
+
+        /* meistens werden die Verläufe nur mit 2 Farben angegeben */
+        #bg7 {
+            background: linear-gradient(lightgrey, rgb(105, 105, 105))
+        }
+
+        /* Angaben für die Fläche des Verlaufs sind optional */
+        #bg8 {
+            background: radial-gradient(at 0 0, rgba(236, 236, 145, 0.767), rgb(151, 151, 192))
+        }
+    </style>
+</head>
+
+<body>
+    <h1>10-css-gradients</h1>
+
+    <div id="container">
+        <div id="bg1"></div>
+        <div id="bg2"></div>
+        <div id="bg3"></div>
+        <div id="bg4"></div>
+        <div id="bg5"></div>
+        <div id="bg6"></div>
+        <div id="bg7"></div>
+        <div id="bg8"></div>
+    </div>
+
+    Theorie-Bemerkungen siehe in Kommentaren der Datei.
+
+    <div>
+        <a href="https://codepen.io/quasimondo/pen/lDdrF">animierter Farbverlauf</a>
+    </div>
+</body>
+
+</html>
