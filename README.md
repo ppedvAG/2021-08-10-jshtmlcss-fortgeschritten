@@ -69,7 +69,7 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 
 ## M014 | TRANSITIONS
 
-- demo []
+- demo [14-css-transitions.html](TRAINER/14-css-transitions.html)
 
 
 
@@ -92,7 +92,7 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] Farbverläufe
   - [x] Schatten
   - [x] Animations
-  - [ ] Transitions
+  - [x] Transitions
 - [ ] Variable Schriften
 - [ ] CSS Funktionen und Regeln
 - [x] Formulare in HTML erstellen
@@ -101,7 +101,6 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] Formulare validieren
   - [x] Eigene Vorschlagslisten (datalist)
 - [ ] Medien in HTML integrieren
-  - [ ] Audio- und Video-Elemente
   - [ ] Audio- und Video APIs
   - [ ] Canvas-Grafiken und Animationen erstellen
 - [ ] Icons erstellen und verwenden
