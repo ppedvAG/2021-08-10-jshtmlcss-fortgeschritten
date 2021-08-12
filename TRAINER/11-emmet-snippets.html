@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-emmet-snippets</title>
+</head>
+<body>
+    <h1>11-emmet-snippets</h1>
+
+    <h2>IDs - raute</h2>
+    <!-- d#myDiv -->
+
+    <d id="myDiv"></d>
+
+    <h2>Klassen - punkt</h2>
+
+    <!-- div.card -->
+    <div class="card"></div>
+
+    <h2>ein snippet mehrmals ausführen - stern zahl</h2>
+
+    <!-- div.card*3 -->
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+
+    <h2>andere Attribute, als id oder class - eckige Klammern</h2>
+    <!-- div.card[contenteditable="true"] -->
+
+    <div class="card" contenteditable="true">adfasdfasdfasdfasdfasd</div>
+
+    <h2>Verschachtelung - schließende spitze klammer</h2>
+    <!-- div.card>p*3 -->
+
+    <div class="card">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+
+    <h2>Reihenfolge für Ausführung der Snippets - runde Klammern</h2>
+    <!-- (div.card>p)*3 -->
+    <div class="card">
+        <p></p>
+    </div>
+    <div class="card">
+        <p></p>
+    </div>
+    <div class="card">
+        <p></p>
+    </div>
+
+    <h2>Content - geschweifte Klammern</h2>
+    <!-- (div.card>p{paragraph inhalt})*3 -->
+    <div class="card">
+        <p>paragraph inhalt</p>
+    </div>
+    <div class="card">
+        <p>paragraph inhalt</p>
+    </div>
+    <div class="card">
+        <p>paragraph inhalt</p>
+    </div>
+
+    <h2>random text - lorem_zahl_ oder einfach lorem als Kindelement</h2>
+    ohne Zahl bekommt man 30 Wörter
+    <!-- (div.card>p>lorem10)*3 -->
+    <div class="card">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, repellat.</p>
+    </div>
+    <div class="card">
+        <p>Voluptates magni ipsa voluptate molestiae quis ab culpa beatae est.</p>
+    </div>
+    <div class="card">
+        <p>Obcaecati, vitae ex earum dolor libero tempore aliquam consectetur fugiat.</p>
+    </div>
+
+    <h2>geschwister - plus</h2>
+    <!-- (div.card>(p>lorem10)+ul>li)*3 -->
+    <div class="card">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, vitae?</p>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+    <div class="card">
+        <p>Consequatur, odio ducimus libero quam deserunt rem voluptas earum ad!</p>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+    <div class="card">
+        <p>Exercitationem adipisci odit debitis unde? Praesentium, quam doloremque. Quod, unde.</p>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+
+    <h2>automatische nummerierung - $ oder $$ oder $$$ usw</h2>
+    <!-- h3{kapitel $$}*3 -->
+    <h3>kapitel 01</h3>
+    <h3>kapitel 02</h3>
+    <h3>kapitel 03</h3>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
