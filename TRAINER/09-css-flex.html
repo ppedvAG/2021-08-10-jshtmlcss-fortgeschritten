@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09-css-flex</title>
+    <style>
+        #container1 {
+            display: flex;
+            background-color: lightsteelblue;
+            align-items: center; /* zentriert vertikal */
+           
+            justify-content: center; /* zentriert horizontal */
+            justify-content: space-between; /* die restliche breite aufgeteilt zwischen den items */
+            justify-content: space-around; /* die restliche breite aufgeteilt um die items */
+            height: 100px;
+        }
+        div {
+            border: thin solid lightseagreen;
+            background-color: linen;
+        }
+        #container1 div {            
+            /* width: 100px;  */
+            /* diese Breite wird als max-breite angewendet */
+            min-width: 100px; /* diese Breite wird als max-breite angewendet */
+            /* zwingt flexbox nicht dazu, nicht reinpassende items in die nächste Zeile zu überspringen */
+            padding: 0.5em 1em;
+            height: 50px;
+            /* ohne angaben von der Höhe bei Items sind sie 100% hoch */
+        }
+
+        #container2 {
+            display: flex;
+            background-color: lightsteelblue;
+            flex-direction: row;
+            flex-direction: row-reverse;
+            /* reverse tauscht flex-start und flex-end aus */
+            justify-content: flex-end;
+            flex-direction: column;
+            flex-direction: column-reverse;
+            
+        }
+        #container3 {
+            display: flex;
+            background-color: lightsteelblue;            
+        }
+        #container3 div {
+            width: 100px;
+        }
+        #container3 div:last-child {
+            flex-grow: 1;
+            /* eine pos zahl lässt die box die restliche breite anzunehmen */
+            /* flex-shrink: -1; */            
+        }
+    </style>
+</head>
+<body>
+    <h1>09-css-flex</h1>
+       
+    <!-- #region INTRO -->
+    <h2>intro</h2>
+    <pre>
+display: flex ändert display-Eigenschaft bei Kindelementen zu 'inline-block'      
+    </pre>
+
+    <div id="container1">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+    </div>
+
+    <hr>
+    <!-- #endregion INTRO -->
+
+    <h2>reihenfolge von items</h2>
+    <pre>
+default - von links nach rechts (flex-direction: row)
+von rechts nach links (flex-direction: row-reverse)
+von oben nach unten (flex-direction: column), dabei die Breite auf 100%
+von unten nach oben (flex-direction: column-reverse), dabei die Breite auf 100%
+    </pre>
+
+    <div id="container2">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+    </div>
+
+    <hr>
+<h2>flex grow</h2>
+
+    <div id="container3">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+    </div>
+
+
+    <!-- (div#container$>(div{div$})*3)*3 -->
+</body>
+</html>
