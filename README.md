@@ -61,6 +61,10 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 
 ## M012 | SHADOWS
 
+- demo [12-css-shadows.html](TRAINER/12-css-shadows.html)
+
+## M013 | ANIMATIONS
+
 - demo []
 
 - [x] HTML Auffrischung
@@ -81,8 +85,8 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - [ ] Neuerungen in CSS3
   - [x] Farbverläufe
   - [x] Schatten
-  - [ ] Transitions
   - [ ] Animations
+  - [ ] Transitions
 - [ ] Variable Schriften
 - [ ] CSS Funktionen und Regeln
 - [x] Formulare in HTML erstellen
@@ -95,11 +99,12 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [ ] Audio- und Video APIs
   - [ ] Canvas-Grafiken und Animationen erstellen
 - [ ] Icons erstellen und verwenden
-- [ ] Layout Grundlagen
+- [x] Layout Grundlagen
   - [x] CSS Box
   - [x] inline, block, inline-block
   - [x] Grid
   - [x] Flex
+  - mehr Themen zu Layout: column count, positioning, z-index, floating
 - [ ] JavaScript APIs verwenden
   - [ ] Geolocation API
   - [ ] FileReader API
