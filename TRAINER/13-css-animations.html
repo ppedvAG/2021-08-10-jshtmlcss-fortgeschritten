@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>13-css-animations</title>
     <style>
-        body{
+        body {
             background-color: black;
         }
-        
-        .container{
+
+        .container {
+            /* setze auf größere breite und höhe, um die 4 gruppen von boxe separat zu sehen */
+            /* width: 900px; */
             width: 600px;
+            /* height: 900px; */
             height: 600px;
             position: relative;
             margin: 0 auto;
             /* border: 1px solid; */
             /* background-color: black; */
         }
+
         .circle-box {
             position: absolute;
             width: 300px;
@@ -27,32 +32,33 @@
             border-radius: 50%;
         }
 
-        .tl{
+        .tl {
             top: 115px;
             left: 115px;
             transform: rotate(180deg);
             animation: rotatetl 10s infinite linear;
         }
 
-        .tr{
+        .tr {
             top: 115px;
             right: 115px;
             transform: rotate(-90deg);
             animation: rotatetr 10s infinite linear;
         }
 
-        .br{
+        .br {
             bottom: 115px;
             right: 115px;
             animation: rotatebr 10s infinite linear;
         }
 
-        .bl{
-            bottom: 115px;
-            left: 115px;
-            transform: rotate(90deg);
-            animation: rotatebl 10s infinite linear;
+        .bl {
+            /* transform: rotate(90deg); */
+            animation: rotatebl 3s infinite linear, verschiebe 3s infinite linear alternate;
+            /* animation: verschiebe 3s infinite linear alternate; */
         }
+
+
 
         .inner {
             width: 70px;
@@ -170,35 +176,55 @@
             }
         } */
 
-        @keyframes rotatetl{
-            0%{
+        @keyframes rotatetl {
+            0% {
                 transform: rotate(180deg);
             }
-            100%{
+
+            100% {
                 transform: rotate(540deg);
             }
         }
-        @keyframes rotatetr{
-            0%{
+
+        @keyframes rotatetr {
+            0% {
                 transform: rotate(-90deg);
             }
-            100%{
+
+            100% {
                 transform: rotate(-450deg);
             }
         }
-        @keyframes rotatebr{
-            0%{
+
+        @keyframes rotatebr {
+            0% {
                 transform: rotate(0deg);
             }
-            100%{
+
+            100% {
                 transform: rotate(360deg);
             }
         }
-        @keyframes rotatebl{
-            0%{
-                transform: rotate(90deg);
+
+        @keyframes verschiebe {
+            0% {
+                bottom: 115px;
+                left: 115px;
             }
-            100%{
+
+            100% {
+                bottom: 50px;
+                left: 50px;
+            }
+        }
+
+        @keyframes rotatebl {
+            0% {
+                transform: rotate(90deg);
+
+            }
+
+            100% {
                 transform: rotate(-270deg);
             }
         }
@@ -254,7 +280,8 @@
         </div>
     </div>
 
-    <!-- <div class="oldscreen">
+    <!-- 
+    <div class="oldscreen">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum odio perspiciatis quisquam vitae a laborum quas
         numquam nemo at hic aspernatur dicta commodi excepturi rerum veritatis, rem ad iure beatae ipsam, dolore enim
         ab magni suscipit porro. Odit dolorum fugiat voluptate in ratione dolore sunt cupiditate sit accusantium qui.
@@ -262,6 +289,8 @@
         officia esse deleniti ex id, distinctio temporibus cum veritatis error ipsum aspernatur. Molestiae ipsam modi
         eius accusamus, vel alias esse quaerat optio expedita, officiis ex voluptatem quibusdam. Repellat ea facilis
         laboriosam modi ipsa sint consequatur.
-    </div> -->
+    </div> 
+-->
 </body>
+
 </html>

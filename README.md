@@ -65,7 +65,13 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 
 ## M013 | ANIMATIONS
 
+- demo [13-css-animations.html](TRAINER/13-css-animations.html)
+
+## M014 | TRANSITIONS
+
 - demo []
+
+
 
 - [x] HTML Auffrischung
 - [x] HTML Syntax
@@ -85,7 +91,7 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - [ ] Neuerungen in CSS3
   - [x] Farbverläufe
   - [x] Schatten
-  - [ ] Animations
+  - [x] Animations
   - [ ] Transitions
 - [ ] Variable Schriften
 - [ ] CSS Funktionen und Regeln
