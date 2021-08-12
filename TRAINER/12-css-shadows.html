@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-css-shadows</title>
+    <style>
+        body {
+            font-size: 3rem;
+        }
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: lightcyan;            
+            font-weight: bold;
+        }
+        div[id^="shadow"] {
+            width: 200px;
+            height: 200px;
+            margin: 30px;
+            background-color: rgb(110, 154, 236);
+            text-align: center;                         
+        }
+
+/* 10px nach links, 20px nach unten, schwarz */
+#shadow01 { box-shadow: 10px 20px;}
+
+/* minus werte für verkehrte richtung vom schatten und farbe */
+#shadow02 { box-shadow: -10px -20px grey;}
+
+/* dritter Wert für blur (gradient) von schattenfarbe zu transparent */
+#shadow03 { box-shadow: 10px 20px 20px;}
+
+/* vierter Wert für fläche von blur */
+#shadow04 { box-shadow: 10px 20px 20px 20px; }
+
+/* nur mit angabe von blur wird ein schatten direkt hinter dem Element erreicht */
+#shadow05 { box-shadow: 0 0 20px crimson; }
+
+/* schatten von rahmen nach innen in die box selbst */
+#shadow06 { box-shadow: 10px 20px 30px inset;}
+
+#shadow07 { box-shadow: 0 0 30px inset;}
+
+#shadow08 { box-shadow: 10px 10px 30px blue,15px 15px 40px red, -20px -20px 40px yellow;}
+
+#shadow09 { 
+    text-shadow: 5px 5px 5px;
+    padding: 90px;
+}
+    </style>
+</head>
+<body>
+    <h1>12-css-shadows</h1>
+
+    <!-- div#container>div#shadow$${$$}*11 -->
+    <div id="container">
+        <div id="shadow01">01</div>
+        <div id="shadow02">02</div>
+        <div id="shadow03">03</div>
+        <div id="shadow04">04</div>
+        <div id="shadow05">05</div>
+        <div id="shadow06">06</div>
+        <div id="shadow07">07</div>
+        <div id="shadow08">08</div>
+        <div id="shadow09">09</div>
+    </div>
+
+    <div>
+        <a href="https://codepen.io/giana/pen/BZaGyP">animierter Box-Schatten beim Hovering</a>
+        <br>
+        <a href="https://codepen.io/FelixRilling/pen/qzfoc">animierter Text-Schatten mit neon</a>
+    </div>
+
+</body>
+</html>

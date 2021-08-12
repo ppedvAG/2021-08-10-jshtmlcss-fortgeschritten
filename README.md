@@ -57,19 +57,20 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 
 ## M011 | EMMET
 
-## M012
+- demo [11-emmet-snippets.html](TRAINER/11-emmet-snippets.html)
+
+## M012 | SHADOWS
+
+- demo []
 
 - [x] HTML Auffrischung
 - [x] HTML Syntax
-- [ ] Neuerungen in HTML5
+- [x] Neuerungen in HTML5
   - [x] neue APIs (Video, Audio, Canvas) (siehe die weiteren Punkte in Agenda)
   - [x] keine schließenden Tags bei manchen Tag-Paaren
   - [x] Semantisches HTML
   - [x] neue input-types (siehe Punkt zu Formularen)
   - [x] Abgerundete Ecken
-  - [ ] Farbverläufe und Schatten
-  - [ ] Transitions
-  - [ ] Animationen
 - [x] Cascading Style Sheets (CSS) Auffrischung
 - [x] inheritence bei CSS-Props
 - [x] CSS Selektoren (Queries)
@@ -77,6 +78,11 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] CSS Pseudoklassen
   - [x] Pseudoelemente
   - [x] Spezifität
+- [ ] Neuerungen in CSS3
+  - [x] Farbverläufe
+  - [x] Schatten
+  - [ ] Transitions
+  - [ ] Animations
 - [ ] Variable Schriften
 - [ ] CSS Funktionen und Regeln
 - [x] Formulare in HTML erstellen
