@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB STORAGE 2</title>
+</head>
+<body>
+    <h1>WEB STORAGE 2</h1>
+    <pre>
+        zweite Quelle von Daten für Web Storage
+    </pre>
+    <script>
+        // Local Storage
+        localStorage.setItem('login', 'aaaa@dgdw.de');
+
+        // Auslesen vom Value vom anderen Tab
+        console.log('localStorage.getItem("username") :>> ', localStorage.getItem('username')); // max mustermann
+
+
+        // Sesstion Storage
+        // Auslesen vom Value vom anderen Tab
+        console.log('sessionStorage.getItem("sessionKey") :>> ', sessionStorage.getItem("sessionKey")); // null, also für diesen Tab nicht sichtbar
+
+        // Auslesen von Keys, wenn 2 html-Seiten vom gleichen Tab geöffnet werden
+        sessionStorage.setItem('html2key2', 'html2value2');
+        console.log('sessionStorage.getItem("sessionKey"), Versuch durch gleichen Tab:>> ', sessionStorage.getItem("sessionKey")); // sessionValue
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-JS-WEB-STORAGE</title>
+</head>
+
+<body>
+    <h1>18-JS-WEB-STORAGE 1</h1>
+    <pre>
+        Um Storage auszutesten, muss html-Datei durch ein Server gestartet werden
+        TYPEN VON BROWSER STORAGE
+        Web Storage
+            Local Storage - 10mb, never expires
+            Session Storage - 5mb, by tab close          
+        Objekt 'cookie' - 4kb (bis zu 3000), expiring customized 
+        Objekt 'caches' - .., as long as a worker is registered and activated
+        IndexedDB
+
+        WEITERE:
+            trust-token
+            web-sql 
+            app-cache
+
+        HINWEISE:
+        LocalStorage und SessionStorage bedienen sich am gleichen Objekt 'Storage';
+        SessionStorage ist nur für ein Tab gedacht. Werden mehrere HTML-Dateien durcheinander und durch das gleiche Tab geöffnet, können sie sesstionStorage teilen.
+        
+        Ein neues Cookie wird gesetzt durch direkte Zuweisung von dem Cookie-String zum Objekt 'document.cookie'.
+        Ohne Expire-Datum läuft Cookie nach dem Beenden der Sitzung ab.
+        Wird ein String zugewiesen, wo am Anfang 'etwas = etwas;' auftaucht, bedeutet es, dass die alten Inhalte von Cookie bleiben.
+        Cookie besteht aus
+            Name - Inhalt vor dem '=' im ersten Paar
+            Value - Inhalt nach dem '=' und vor dem ';' im ersten Paar
+            Domain - automatisch bereichnet, z.B. 127.0.0.1
+            Expires - Sitzung, wenn nicht weiteres angegeben
+            Path - /
+            HttpOnly
+            weitere..
+
+        Um mit den Werten von cookie zu arbeiten, müssen die Methoden von Strings angewendet werden.
+        Nur die Seite, die Cookie gesetzt hat, darf es auslesen.
+
+        
+    </pre>
+
+    <h2>Test Öffnen einer html durch eine andere - SessionStorage</h2>
+    <a href="18-js-web-storage2.html">18-js-web-storage2.html</a>
+    <script>
+
+        //#region WEB STORAGE
+
+        // WEB STORAGE
+        // LOCAL STORAGE
+
+        console.log('localStorage :>> ', localStorage); // Storage{length: 0}
+        /* 
+        [[Prototype]]: Storage
+            clear: ƒ clear()
+            getItem: ƒ getItem()
+            key: ƒ key()
+            length: (...)
+            removeItem: ƒ removeItem()
+            setItem: ƒ setItem()
+            constructor: ƒ Storage()
+            Symbol(Symbol.toStringTag): "Storage"
+            get length: ƒ length()
+        */
+        localStorage.setItem('username', 'max mustermann');
+        console.log('localStorage.getItem("username") :>> ', localStorage.getItem("username")); // max mustermann
+        console.log('localStorage.key(0) :>> ', localStorage.key(0)); // 'username'
+        console.log('localStorage.length :>> ', localStorage.length); // 1
+        localStorage.setItem('adresse', 'Hauptstr 1, 12000 München');
+        localStorage.setItem('angelegt', new Date().toLocaleDateString());
+        localStorage.removeItem('adresse');
+        // localStorage.clear(); // löscht alles    
+
+
+        // SESSION STORAGE
+        console.log('sessionStorage :>> ', sessionStorage); // Storage {length: 0}
+        // das gleiche Objekt wie bei localStorage
+        /* 
+        [[Prototype]]: Storage
+            clear: ƒ clear()
+            getItem: ƒ getItem()
+            key: ƒ key()
+            length: (...)
+            removeItem: ƒ removeItem()
+            setItem: ƒ setItem()
+            constructor: ƒ Storage()
+            Symbol(Symbol.toStringTag): "Storage"
+            get length: ƒ length()
+        */
+        sessionStorage.setItem('sessionKey', 'sessionValue');
+
+        //#endregion WEB STORAGE
+
+        // OBJEKT 'COOKIE'
+        console.clear();
+        console.log('document.cookie :>> ', document.cookie); // gibt nicht sein Objekt zurück, sondern die Inhalte
+        // 
+        document.cookie = 'test cookie';
+        console.log('document.cookie :>> ', document.cookie); // test cookie, dieser String landet bei Abschnitt 'Value'
+        document.cookie = 'test 2 cookie';
+        console.log('document.cookie :>> ', document.cookie); // test 2 cookie, auch in der Zeile 88, wenn die Sitzung nicht zu Ende war, aber die Page aktualisiert wurde
+
+        document.cookie = 'key1=value1; key2=value2; key3=value3'; // nur das erste Paar wurde übernommen
+        console.log('document.cookie :>> ', document.cookie); // test 2 cookie; key1=value1
+        console.log('typeof document.cookie :>> ', typeof document.cookie); // string
+        console.log('document.cookie.name :>> ', document.cookie.name); // undefined
+       
+        console.log('document.cookie.length :>> ', document.cookie.length); // 26, wenn die Länge vom ersten Cookie 13 ist und vom zweiten 10
+        document.cookie = 'key1=value1; domain=test;'; // domain-Spalte wird vom Browser ausgefüllt
+        document.cookie = 'name=value2; domain=my.test.de;'; // 
+        console.log('new Date().getTime + 300 :>> ', new Date().getTime + 300);
+        // Neuer Werte hinter 'key=' ändert den Wert bei dem key
+        document.cookie = `name=value4`; // 
+        document.cookie = `key3=value3; max-age=3`; // max-age muss in Sekunden angegeben werden. 2021-08-06T09:10:34.293Z
+        document.cookie = `key4=value3;expires=1000`; // expires ist veraltet, stattdessen max-age
+        document.cookie = "ssasdfasdfadsfasdf"; // ändert den Wert vom String ohne 'key=value;' Syntax
+        document.cookie = ''; // löscht nicht die vorherigen strings
+        document.cookie = undefined; // vom String ohne 'key=value;' Syntax zu undefined
+        // document.cookie = null; // vom String ohne 'key=value;' Syntax zu null 
+        // document.cookie = {}; // vom String ohne 'key=value;' Syntax zu [object Object]
+        
+
+        // OBJEKT 'CACHES'
+        // INDEXEDDB
+
+    </script>
+
+<h2>COOKIES</h2>
+<h2>d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000))</h2>
+<p id="out1"></p>
+<h2>expires</h2>
+<p id="out2"></p>
+<h2>myCookie</h2>
+<p id="out3"></p>
+
+<script>
+    //nachschauen in Web-Speicher im Developer Tool
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d = d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));        
+        document.getElementById('out1').textContent = d;
+        var expires = "expires=" + d.toUTCString();
+        out2.textContent = expires; //expires=Fri, 17 May 2019 14:18:22 GMT
+        var myCookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        out3.textContent = myCookie;
+        document.cookie = myCookie;
+    }
+    // setCookie("language", "de", 2);
+    // let cookieArr = [{id: 5},{id: 6}];
+    // setCookie("todos", cookieArr.toString(), 2);
+    
+    // console.log(document.cookie); //string 
+    // let objArr = Object.entries({id: 6, key: true});
+
+    // out4.innerText = objArr;
+    // console.log({id: 6}.toString());
+
+    //language=de;expires=Fri, 17 May 2019 14:32:25 GMT;path=/
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        let user = getCookie("username");
+        if (user != "") {
+            alert("Welcome again " + user);
+        } else {
+            user = prompt("Please enter your name:", "");
+            if (user != "" && user != null) {
+                setCookie("username", user, 5);
+            }
+        }
+    }
+    checkCookie();
+    console.log('document.cookie :',document.cookie);
+</script>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20-JS-WINDOW-HISTORY</title>
+</head>
+<body>
+    <h1>20-JS-WINDOW-HISTORY</h1>
+    <pre>
+        window - eine Instanz vom Objekt Window für konkreten Browser und konkrete Sitzung
+        Window ist ein Konstruktor und hat die Keys, wie bei einer Funktion
+
+        In dieser Demo
+        window.navigator
+        window.navigator.geolocation     
+        window.location - Informationen darüber, wie eine Seite gerendert wird (Protokol, Host, Port, Origin ...)
+        window.history - Schritte, die Benutzer beim Navigieren durch die Seite gemacht hat
+        window.screen - Eigenschaften vom Bildschirm, in welchem ein Window sich befindet
+
+        Zusätzlich zu JS Geolocation API bieten sich Geo APIs als Web-Dienste an.
+        z.B. Google Maps APIs
+        https://developers.google.com/maps       
+
+    </pre>
+
+    <h2>test window history</h2>
+    <a href="20-js-window-history2.html">20-js-window-history2.html</a>
+
+    <h2>geolocation</h2>
+    google lässt sich nicht durch iframe oder embed anzuzeigen
+    <iframe src="https://www.google.de/maps/@52.51072,13.2784203,11z?hl=de&authuser=0" frameborder="0" width="500" height="400"></iframe>
+    <embed src="https://www.google.de/maps/@52.51072,13.2784203,11z?hl=de&authuser=0" type="" width="500" height="400">
+        <a href="" id="cottbus">GO COTTBUS</a>
+        
+        
+        <script>
+            document.getElementById('cottbus').href = 'https://www.google.de/maps/place/Cottbus'
+            // document.getElementById('cottbus').href = 'https://www.google.de/maps/place/Cottbus/@51.7783842,14.2472191'
+            // https://www.google.de/maps/@51.7783842,14.2472191
+        </script>
+
+        <h2>input: file</h2>
+        <input type="file" name="fileInpName" id="fileInpId">
+        
+    <script>
+        console.log('Object.getOwnPropertyNames(window) :>> ', Object.getOwnPropertyNames(window)); // Array(982), in FF 819
+
+        // Window ist ein Konstruktor und hat die Keys, wie bei einer Funktion
+        console.log('Object.getOwnPropertyNames(Window) :>> ', Object.getOwnPropertyNames(Window)); // (7) ["length", "name", "arguments", "caller", "prototype", "TEMPORARY", "PERSISTENT"]
+        
+  
+        // WINDOW.NAVIGATOR
+        console.log('navigator :>> ', navigator); // Navigator {vendorSub: "", productSub: "20030107", vendor: "Google Inc.", maxTouchPoints: 10, userActivation: UserActivation, …}
+        console.log('Object.getOwnPropertyNames(navigator) :>> ', Object.getOwnPropertyNames(navigator)); // []
+
+
+        // WINDOW.NAVIGATOR.GEOLOCATION
+        console.log('navigator.geolocation :>> ', navigator.geolocation); // Geolocation {}
+        /* ein leeres Objekt:
+            Geolocation {}
+        */
+        console.log('Object.getOwnPropertyNames(navigator.geolocation) :>> ', Object.getOwnPropertyNames(navigator.geolocation));
+        /* 
+        [[Prototype]]: Geolocation
+            clearWatch: ƒ clearWatch()
+            getCurrentPosition: ƒ getCurrentPosition()
+            watchPosition: ƒ watchPosition()
+            constructor: ƒ Geolocation()
+            Symbol(Symbol.toStringTag): "Geolocation"
+        */
+
+        // Success-Callback bei getCurrentPosition() bekommt folgendes Objekt:
+        /* 
+        GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1628252495260}
+            coords: GeolocationCoordinates
+            accuracy: 213
+            altitude: null
+            altitudeAccuracy: null
+            heading: null
+            latitude: 52.478616
+            longitude: 13.44463
+            speed: null
+            */            
+
+
+        // bei getCurrentPosition wird Browser fragen, ob er auf Position zugreifen darf
+        let geoReturn = navigator.geolocation.getCurrentPosition((coords) => { 
+            console.log('geo erfolg'); // kommt später in die Konsole - Abfragen von Pos ist asynchron
+            console.log('coords :>> ', coords); // GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1628252495260}
+            // ermittelt:  latitude: 52.478616, longitude: 13.44463
+            // tatsächlichen: // @52.4786232, 13.442456,
+        }, 
+        () => {
+            console.log('geo miserfolg');            
+        })
+        console.log('geoReturn :>> ', geoReturn); // undefined
+
+
+
+        // WINDOW.LOCATION
+        console.log('location :>> ', location); //Location {ancestorOrigins: DOMStringList, href: "file:///D:/D_Dokumente/k_js_html_css_jq/2021-08-02…-02-js-html-css/TRAINER/20-js-window-history.html", origin: "file://", protocol: "file:", host: "", …}
+        /* Location {
+            ancestorOrigins: DOMStringList {length: 0}
+            assign: ƒ assign()
+            hash: ""
+            host: ""
+            hostname: ""
+            href: "file:///D:/D_Dokumente/k_js_html_css_jq/2021-08-02-VN-js-html-css-VC/2021-08-02-js-html-css/TRAINER/20-js-window-history.html"
+            origin: "file://"
+            pathname: "/D:/D_Dokumente/k_js_html_css_jq/2021-08-02-VN-js-html-css-VC/2021-08-02-js-html-css/TRAINER/20-js-window-history.html"
+            port: ""
+            protocol: "file:"
+            reload: ƒ reload()
+            replace: ƒ replace()
+            search: ""
+            toString: ƒ toString()
+            valueOf: ƒ valueOf()
+            Symbol(Symbol.toPrimitive): undefined
+        }
+ */
+        console.log('Object.getOwnPropertyNames(location) :>> ', Object.getOwnPropertyNames(location)); // (15) ["valueOf", "ancestorOrigins", "href", "origin", "protocol", "host", "hostname", "port", "pathname", "search", "hash", "assign", "reload", "replace", "toString"]
+        /* 
+        [[Prototype]]: Location
+            constructor: ƒ Location()
+            Symbol(Symbol.toStringTag): "Location"
+         */
+        
+        // WINDOW.HISTORY
+        console.log('history :>> ', history); // 
+        /* 
+        History {
+            length: 1, 
+            scrollRestoration: "auto", 
+            state: null
+        } */
+        console.log('Object.getOwnPropertyNames(history) :>> ', Object.getOwnPropertyNames(history)); // []
+        /* 
+        [[Prototype]]: History
+back: ƒ back()
+forward: ƒ forward()
+go: ƒ go()
+length: (...)
+pushState: ƒ pushState()
+replaceState: ƒ replaceState()
+scrollRestoration: (...)
+state: (...)
+constructor: ƒ History()
+Symbol(Symbol.toStringTag): "History"
+get length: ƒ length()
+get scrollRestoration: ƒ scrollRestoration()
+set scrollRestoration: ƒ scrollRestoration()
+get state: ƒ state()
+ */
+
+
+        // WINDOW.SCREEN
+        console.log('screen :>> ', screen); // Screen {availWidth: 1920, availHeight: 1040, width: 1920, height: 1080, colorDepth: 24, …}
+        /* 
+        availHeight: 1040
+availLeft: -3286
+availTop: 0
+availWidth: 1920
+colorDepth: 24
+height: 1080
+orientation: ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
+pixelDepth: 24
+width: 1920
+ */
+        console.log('Object.getOwnPropertyNames(screen) :>> ', Object.getOwnPropertyNames(screen)); // []
+        /* 
+        [[Prototype]]: Screen
+availHeight: (...)
+availLeft: (...)
+availTop: (...)
+availWidth: (...)
+colorDepth: (...)
+height: (...)
+orientation: (...)
+pixelDepth: (...)
+width: (...)
+constructor: ƒ Screen()
+Symbol(Symbol.toStringTag): "Screen"
+get availHeight: ƒ availHeight()
+get availLeft: ƒ availLeft()
+get availTop: ƒ availTop()
+get availWidth: ƒ availWidth()
+get colorDepth: ƒ colorDepth()
+get height: ƒ height()
+get orientation: ƒ orientation()
+get pixelDepth: ƒ pixelDepth()
+get width: ƒ width()
+
+         */
+    </script>
+</body>
+</html>

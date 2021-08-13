@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <meta charset="utf-8" />
+    <title>AXAJ - XMLHttpRequest - jQuery</title>
+
+    <script src="jquery-1.11.3.min.js"></script>
+
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Eik Klee</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">38700.0000000000</mso:Order>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Eik Klee</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x0101009BAF677105EB114B982F3F6AC57AC8E1</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body>
+
+    <p>
+        Netto:
+        <input type="text" id="eingabe">
+        <button id="btn">Rechne!</button>
+    </p>
+
+    <p>
+        Ergbnis:
+        <span id="ergebnis"></span>
+    </p>
+
+
+    <script>
+
+        $('#btn').click(function ()
+        {
+            var eingabe = $('#eingabe').val();
+
+            $.post('bruto.php', 'netto=' + eingabe, function (data)
+            {
+                $('#ergebnis').text(data);
+            })
+                .error(function (error)
+                {
+                    console.log(error);
+                    alert("Es ist ein Fehler aufgetreten:\n" + error.status + ": " + error.statusText);
+                });
+        });
+
+    </script>
+
+</body>
+
+</html>

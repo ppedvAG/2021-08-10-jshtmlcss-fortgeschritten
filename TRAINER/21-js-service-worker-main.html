@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21 SERVICE WORKER</title>
+</head>
+
+<body>
+    <h1>21 SERVICE WORKER</h1>
+
+    <a href="20-js-window-history2.html">20-js-window-history2.html</a> | 
+    <a href="20-js-apis.html">20-js-apis.html</a>
+ 
+    <script>
+        // make sure, sw are supported
+        if ('serviceWorker' in navigator) {
+            // console.log('service worker supported')
+            window.addEventListener('load', () => {
+                navigator.serviceWorker
+                    .register('./21-js-service-worker.js')
+                    .then(reg => console.log('Service Worker: Registered', reg))
+                    .catch(err => console.log(`Service worker: Error: ${err}`))
+            })
+        }
+    </script>
+</body>
+
+</html>

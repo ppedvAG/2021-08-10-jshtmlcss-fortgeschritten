@@ -71,7 +71,9 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 
 - demo [14-css-transitions.html](TRAINER/14-css-transitions.html)
 
+## M15 | AUDIO
 
+- demo [15-html-audio.html](TRAINER/15-html-audio.html)
 
 - [x] HTML Auffrischung
 - [x] HTML Syntax
@@ -88,7 +90,7 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] CSS Pseudoklassen
   - [x] Pseudoelemente
   - [x] Spezifität
-- [ ] Neuerungen in CSS3
+- [x] Neuerungen in CSS3
   - [x] Farbverläufe
   - [x] Schatten
   - [x] Animations
@@ -103,8 +105,8 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - [ ] Medien in HTML integrieren
   - [x] Audio- und Video APIs
   - [ ] Canvas-Grafiken und Animationen erstellen
-  - [ ] iFrames
-- [ ] Icons erstellen und verwenden
+!  - [ ] iFrames
+- [ ] Icons erstellen und verwenden (Farben bei Icons ändern)
 - [x] Layout Grundlagen
   - [x] CSS Box
   - [x] inline, block, inline-block
@@ -114,7 +116,7 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - [ ] JavaScript APIs verwenden
   - [ ] Geolocation API
   - [ ] FileReader API
-  - [ ] Web Worker API
+  - [ ] Web Worker API - öfter Service Worker
   - [ ] Web Storage API (DOM-Storage)
   - [ ] XmlHttpRequest 2 API (AJAX)
     - [ ] heute eher: fetch() API

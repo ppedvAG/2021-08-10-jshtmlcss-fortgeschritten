@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>FileAPI</title>
+</head>
+
+<body>
+
+    <p>
+        <input type="file" id="upload" />
+    </p>
+    <code id="output"></code>
+    <script>
+        var upload = document.getElementById("upload");
+
+        upload.onchange = function () {
+
+            // Erzeugen des Readers
+            var meinReader = new FileReader();
+            var file = this.files.item(0); // Feld 'files' ist befüllt, nachdem eine Datei durch file-Picker vom input:file ausgewählt wurde
+
+            meinReader.addEventListener("loadstart", load_start);
+            meinReader.addEventListener("load", on_load);
+            meinReader.addEventListener("loaded", load_end);
+
+            meinReader.addEventListener("abort", on_abort);
+            meinReader.addEventListener("error", load_error);
+
+            meinReader.addEventListener("progress", load_progress);
+
+            meinReader.readAsText(file);
+
+        }
+        function load_start() {
+            console.log("Einlesen hat begonnen...");
+        }
+        function on_load() {
+            console.log("...Einlesen erfolgreich abgeschlossen!");
+            document.getElementById("output").innerHTML = this.result;
+        }
+        function load_end() {
+            console.log("...Einlesen fertig!");
+        }
+        function on_abort() {
+            console.log("...Einlesen wurde abgebrochen!");
+        }
+        function load_error(evt) {
+            console.log("...Fehler aufgetreten!");
+            console.error('evt.error: ', evt.error);
+        }
+        function load_progress(evt) {
+            console.info("...liest ein...");
+            console.log('evt.total: ', evt.total);
+        }
+    </script>
+</body>
+
+</html>

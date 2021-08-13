@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Webworker 1</title>
+	<meta charset="utf-8" />
+
+</head>
+<body>
+    <!--  !! Das UI ist blockiert, bis start() abgearbeitet worden ist. !! -->
+    <button onclick="start()">Starte </button>
+
+    <!-- !! Klicks, die der User währenddessen macht, werden anschließend auch alle ausgeführt. -->
+    <button onclick="alert('Hallo')">Sag Hallo</button>
+
+    <script>
+
+        function start() {
+            // komplexe Berechnung, damit es lang dauert:
+            for (var i = 0; i < 500000000; i++) {
+                Math.sqrt(Math.random() * 1000000);
+            }
+
+            alert("fertig");
+        }
+    </script>
+
+</body>
+</html>

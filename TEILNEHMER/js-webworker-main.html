@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webworker erstellen</title>
+</head>
+
+<body>
+    <!-- Ein Webworker ist im Hintergrund laufendes JavaScript, das die Performance der Seite
+         nicht beeinträchtigt. -->
+
+    <p>Zähle weiter hoch:
+        <output id="result"></output> <!-- in ein Output-Feld kann man das Ergebnis einer Berechnung ausgeben. -->
+    </p>
+    <button onclick="startWorker()">Start</button>
+    <button onclick="stopWorker()">Stop</button>
+
+<script>
+    var w;
+    function startWorker() {
+        
+        if (typeof (Worker) !== "undefined") {  // damit wird überprüft, ob der Browser Webworker unterstützt
+            if (typeof (w) == "undefined") {
+                w = new Worker("js-webworker_demo.js"); // der Worker wird erstellt und führt diese JavaScript-Datei aus
+            }
+            w.onmessage = function (event) {  // wenn die Seite eine Message vom Webworker bekommt, wird dieser Code ausgeführt (event listener)
+                document.getElementById("result").innerHTML = event.data;
+            };
+        } else {
+            document.getElementById("result").innerHTML = "Ihr Browser unterstützt keine Web Worker.";
+        }
+    }
+    function stopWorker() {
+        w.terminate(); // der Webworker wird so lange auf Messages von der Seite warten, bis man ihn terminiert (selbst, wenn das externe Scipt bereits ausgeführt wurde!)
+        w = undefined; // dadurch kann der Code weiterverwendet werden
+    }
+</script>
+
+</body>
+
+</html>

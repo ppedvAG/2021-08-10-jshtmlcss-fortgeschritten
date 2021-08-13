@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        var req;
+
+        function doIt() {
+
+            // erstellen des requests
+            req = new XMLHttpRequest();
+
+            // Anfrage erstellen ( GET, URL, Sync/async )
+            var url = "/test.txt";
+            req.open("GET", url, true);
+
+            req.setRequestHeader("Content-Type", "text/xml");
+            req.send(null);
+
+            // Beim abschliessen des request wird diese funktion ausgeführt
+            req.onreadystatechange = function () {
+
+                if (req.readyState == 4) {
+                    if (req.status != 200) {
+                        alert("Fehler: " + req.status);
+                    } else {
+                        alert(req.responseText);
+
+                        var result = "<b>" + req.responseText + "</b>";
+                        document.getElementById("eins").innerHTML = result;
+                    }
+                }
+            };
+
+        }
+
+    </script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">QCVKMJJWM3PQ-1355832870-201</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">61444682-904b-4a1f-8bf2-83e692677c10</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://ppedv.sharepoint.com/sites/files/Trainer/_layouts/15/DocIdRedir.aspx?ID=QCVKMJJWM3PQ-1355832870-201, QCVKMJJWM3PQ-1355832870-201</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+
+    <div id="eins" style="width: 80%; height: 80%; border: 1px dashed black;">
+        <input type="button" onclick="doIt();"value="Starte" />
+    </div>
+
+</body>
+</html>
