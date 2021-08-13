@@ -7,6 +7,12 @@
 
 </head>
 <body>
+    <h1>Aufwendiger Prozess ohne Web Worker</h1>
+    <pre>
+Das UI ist blockiert, bis start() abgearbeitet worden ist.
+
+Klicks, die der User währenddessen macht, werden anschließend auch alle ausgeführt.
+    </pre>
     <!--  !! Das UI ist blockiert, bis start() abgearbeitet worden ist. !! -->
     <button onclick="start()">Starte </button>
 
@@ -14,16 +20,13 @@
     <button onclick="alert('Hallo')">Sag Hallo</button>
 
     <script>
-
         function start() {
             // komplexe Berechnung, damit es lang dauert:
             for (var i = 0; i < 500000000; i++) {
                 Math.sqrt(Math.random() * 1000000);
             }
-
             alert("fertig");
         }
     </script>
-
 </body>
 </html>

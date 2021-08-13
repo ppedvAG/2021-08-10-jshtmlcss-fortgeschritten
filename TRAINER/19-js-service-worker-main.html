@@ -11,8 +11,9 @@
 <body>
     <h1>21 SERVICE WORKER</h1>
 
-    <a href="20-js-window-history2.html">20-js-window-history2.html</a> | 
-    <a href="20-js-apis.html">20-js-apis.html</a>
+    <p>neue Änderung</p>
+    <a href="15-html-audio.html">15-html-audio.html</a>
+    
  
     <script>
         // make sure, sw are supported
@@ -20,7 +21,7 @@
             // console.log('service worker supported')
             window.addEventListener('load', () => {
                 navigator.serviceWorker
-                    .register('./21-js-service-worker.js')
+                    .register('./19-js-service-worker.js')
                     .then(reg => console.log('Service Worker: Registered', reg))
                     .catch(err => console.log(`Service worker: Error: ${err}`))
             })

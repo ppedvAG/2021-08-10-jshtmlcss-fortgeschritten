@@ -1,9 +1,8 @@
-const cacheName = 'v1';
+const cacheName = 'v2';
 const cacheAssets = [
-    '21-js-service-worker-main.html',
-    '21-js-service-worker.js',
-    '20-js-apis.html',
-    '20-js-window-history2.html'
+    '19-js-service-worker-main.html',
+    '19-js-service-worker.js',
+    '15-html-audio.html'
 ]
 
 // Es gibt kein Event Register, sondern Install
@@ -39,9 +38,11 @@ self.addEventListener('activate', (e) => {
 
 
 self.addEventListener('fetch', e => {
-    console.log('Service Worker: Fetching'); // in Firefox sieht man diese Meldung. In Edge und Chrome nicht
+    // todo #2
+    // in Firefox sieht man diese Meldung. In Edge und Chrome nicht
+    console.log('Service Worker: Fetching');
     alert('Service Worker: Fetching');
-    e.respondWith(
+    e.respondWith(       
         // bei misserfolg lade assets vom cache
         fetch(e.request).catch(() => caches.match(e.request))
     )

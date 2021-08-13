@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <h1>Hauptdatei, von wo Worker gestartet wird.</h1>
     <!-- Ein Webworker ist im Hintergrund laufendes JavaScript, das die Performance der Seite
          nicht beeinträchtigt. -->
 
@@ -18,14 +19,15 @@
     <button onclick="stopWorker()">Stop</button>
 
 <script>
-    var w;
+    var worker;
     function startWorker() {
         
         if (typeof (Worker) !== "undefined") {  // damit wird überprüft, ob der Browser Webworker unterstützt
-            if (typeof (w) == "undefined") {
-                w = new Worker("js-webworker_demo.js"); // der Worker wird erstellt und führt diese JavaScript-Datei aus
+            if (typeof (worker) == "undefined") {
+                worker = new Worker("19-js-webworker-script.js"); // der Worker wird erstellt und führt diese JavaScript-Datei aus
+                console.log('worker aus main:>> ', worker);
             }
-            w.onmessage = function (event) {  // wenn die Seite eine Message vom Webworker bekommt, wird dieser Code ausgeführt (event listener)
+            worker.onmessage = function (event) {  // wenn die Seite eine Message aus dem Worker-Script bekommt, wird dieser Code ausgeführt (event listener)
                 document.getElementById("result").innerHTML = event.data;
             };
         } else {
@@ -33,8 +35,8 @@
         }
     }
     function stopWorker() {
-        w.terminate(); // der Webworker wird so lange auf Messages von der Seite warten, bis man ihn terminiert (selbst, wenn das externe Scipt bereits ausgeführt wurde!)
-        w = undefined; // dadurch kann der Code weiterverwendet werden
+        worker.terminate(); // der Webworker wird so lange auf Messages von der Seite warten, bis man ihn terminiert (selbst, wenn das externe Scipt bereits ausgeführt wurde!)
+        worker = undefined; // dadurch wird ein Zeichen gesetzt, dass kein Worker im Moment läuft
     }
 </script>
 
