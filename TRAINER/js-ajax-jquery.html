@@ -40,11 +40,9 @@
 
 
     <script>
-
         $('#btn').click(function ()
         {
             var eingabe = $('#eingabe').val();
-
             $.post('bruto.php', 'netto=' + eingabe, function (data)
             {
                 $('#ergebnis').text(data);
@@ -55,9 +53,6 @@
                     alert("Es ist ein Fehler aufgetreten:\n" + error.status + ": " + error.statusText);
                 });
         });
-
     </script>
-
 </body>
-
 </html>

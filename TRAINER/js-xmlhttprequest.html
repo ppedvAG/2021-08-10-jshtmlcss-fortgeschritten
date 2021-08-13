@@ -13,7 +13,7 @@
             req = new XMLHttpRequest();
 
             // Anfrage erstellen ( GET, URL, Sync/async )
-            var url = "/test.txt";
+            var url = "https://jsonplaceholder.typicode.com/todos/1";
             req.open("GET", url, true);
 
             req.setRequestHeader("Content-Type", "text/xml");
@@ -26,7 +26,7 @@
                     if (req.status != 200) {
                         alert("Fehler: " + req.status);
                     } else {
-                        alert(req.responseText);
+                        console.log('req.responseText :>> ', req.responseText);
 
                         var result = "<b>" + req.responseText + "</b>";
                         document.getElementById("eins").innerHTML = result;

@@ -93,7 +93,7 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 
 - demo []
 
-## M020 | 
+## M020 | FETCH API
 
 - demo []
 
@@ -104,7 +104,6 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 ## M022 | 
 
 - demo []
-
 
 - [x] HTML Auffrischung
 - [x] HTML Syntax
@@ -126,8 +125,8 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] Schatten
   - [x] Animations
   - [x] Transitions
-- [ ] Variable Schriften
-- [ ] CSS Funktionen und Regeln
+- [ ] Variable Schriften [blog](https://blog.ppedv.de/post/variable-fonts-spezielle-schriftarten-furs-web)
+- [ ] CSS Funktionen und @-rules
 - [x] Formulare in HTML erstellen
   - [x] Eingabefelder
   - [x] Formular Attribute
@@ -144,10 +143,10 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] Grid
   - [x] Flex
   - mehr Themen zu Layout: column count, positioning, z-index, floating
-- [ ] JavaScript APIs verwenden
+- [x] JavaScript APIs verwenden
   - [x] Geolocation API
   - [x] FileReader API
-  - [ ] Web Worker API - öfter Service Worker
-  - [ ] Web Storage API (DOM-Storage)
-  - [ ] XmlHttpRequest 2 API (AJAX)
-    - [ ] heute eher: fetch() API
+  - [x] Web Worker API - öfter Service Worker
+  - [x] Web Storage API (DOM-Storage)
+  - [x] XmlHttpRequest 2 API (AJAX)
+    - [x] heute eher: fetch() API

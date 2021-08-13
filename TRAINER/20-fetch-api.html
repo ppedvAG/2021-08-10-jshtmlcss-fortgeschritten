@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Übung Tabelle
+    </h1>
+    <pre>rendern Sie die Todos in einer Tabelle mit Hilfe von insertRow() und insertCell()</pre>
+    <table>
+        <caption>Todos Tabelle</caption>
+        
+        <thead><tr><th>Id</th><th>userId</th><th>title</th><th>completed</th></tr></thead>
+        <tbody id="myTBody">
+            
+        </tbody>
+        <tfoot><tr><th>Id</th><th>userId</th><th>title</th><th>completed</th></tr></tfoot>
+    </table>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response => response.json())
+            .then(json => renderAsTable(json))
+
+            // insertRow()
+            // insertCell()
+
+        function renderAsTable(todos) {
+            document.getElementsByTagName('caption')[0].style.visibility = 'visible';
+            document.getElementsByTagName('thead')[0].style.visibility = 'visible';
+            document.getElementsByTagName('tfoot')[0].style.visibility = 'visible';
+
+            let tBodyElement = document.getElementById('myTBody');
+            for (const todo of todos) {
+                let row = tBodyElement.insertRow();
+                row.insertCell().innerText = todo.id;
+                row.insertCell().innerText = todo.userId;
+                row.insertCell().innerText = todo.title;
+                row.insertCell().innerText = todo.completed;
+            }
+        }
+    </script>
+</body>
+
+</html>
