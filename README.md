@@ -75,6 +75,12 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 
 - demo [15-html-audio.html](TRAINER/15-html-audio.html)
 
+## M016 | FILE API
+
+- demo [16-js-file-api.html](TRAINER/16-js-file-api.html)
+- demo [16-js-file-api.txt](TRAINER/16-js-file-api.txt)
+
+
 - [x] HTML Auffrischung
 - [x] HTML Syntax
 - [x] Neuerungen in HTML5

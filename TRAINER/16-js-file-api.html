@@ -3,13 +3,17 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>FileAPI</title>
+    <title>16-js-file-api</title>
 </head>
 
 <body>
+    <h1>16-js-file-api</h1>
+    <pre>
+        Props 'files' und 'result' beim globalen Objekt (Window) werden durch FileReader befüllt
+    </pre>
 
     <p>
-        <input type="file" id="upload" />
+        <input type="file" id="upload" multiple/>
     </p>
     <code id="output"></code>
     <script>
@@ -19,8 +23,11 @@
 
             // Erzeugen des Readers
             var meinReader = new FileReader();
+            console.log('this.files :>> ', this.files);
+
             var file = this.files.item(0); // Feld 'files' ist befüllt, nachdem eine Datei durch file-Picker vom input:file ausgewählt wurde
 
+            // Methode item() kommt von Objekt FileList. Indexieren von Elementen fängt bei 0 an.
             meinReader.addEventListener("loadstart", load_start);
             meinReader.addEventListener("load", on_load);
             meinReader.addEventListener("loaded", load_end);
@@ -39,6 +46,16 @@
         function on_load() {
             console.log("...Einlesen erfolgreich abgeschlossen!");
             document.getElementById("output").innerHTML = this.result;
+            // test
+            // for (const iterator of this.files) { // per default ist FileList nicht iterierbar
+                // für nicht iterierbare Objekte: for in
+                // meinReader.readAsText(iterator);
+                // console.log('this.result :>> ', this.result);
+                // document.getElementById("output").innerHTML += this.result;
+               // meinReader.abort();
+                
+            // }
+
         }
         function load_end() {
             console.log("...Einlesen fertig!");
