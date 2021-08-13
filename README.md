@@ -84,7 +84,26 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 
 - demo [17-js-geo-und-andere-apis.html](TRAINER/17-js-geo-und-andere-apis.html)
 
+## M018 | STORAGE
 
+- demo [18-js-browser-storage.html](TRAINER/18-js-browser-storage.html)
+- demo [18-js-browser-storage2.html](TRAINER/18-js-browser-storage2.html)
+
+## M019 | WORKERS
+
+- demo []
+
+## M020 | 
+
+- demo []
+
+## M021 | 
+
+- demo []
+
+## M022 | 
+
+- demo []
 
 
 - [x] HTML Auffrischung

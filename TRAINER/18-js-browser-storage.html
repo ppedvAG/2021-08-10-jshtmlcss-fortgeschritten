@@ -12,6 +12,7 @@
     <h1>18-JS-WEB-STORAGE 1</h1>
     <pre>
         Um Storage auszutesten, muss html-Datei durch ein Server gestartet werden
+
         TYPEN VON BROWSER STORAGE
         Web Storage
             Local Storage - 10mb, never expires
@@ -26,8 +27,13 @@
             app-cache
 
         HINWEISE:
+
+        Bei LocalStorage, SessionStorage und Cookie werden die Daten mit Angabe von URL abgelegt.
+
+
         LocalStorage und SessionStorage bedienen sich am gleichen Objekt 'Storage';
-        SessionStorage ist nur für ein Tab gedacht. Werden mehrere HTML-Dateien durcheinander und durch das gleiche Tab geöffnet, können sie sesstionStorage teilen.
+        SessionStorage ist nur für ein Tab gedacht. 
+        Werden mehrere HTML-Dateien durcheinander und durch das gleiche Tab geöffnet, können sie sessionStorage teilen.
         
         Ein neues Cookie wird gesetzt durch direkte Zuweisung von dem Cookie-String zum Objekt 'document.cookie'.
         Ohne Expire-Datum läuft Cookie nach dem Beenden der Sitzung ab.
@@ -76,7 +82,7 @@
         localStorage.setItem('adresse', 'Hauptstr 1, 12000 München');
         localStorage.setItem('angelegt', new Date().toLocaleDateString());
         localStorage.removeItem('adresse');
-        // localStorage.clear(); // löscht alles    
+        localStorage.clear(); // löscht alles    
 
 
         // SESSION STORAGE
@@ -99,7 +105,7 @@
         //#endregion WEB STORAGE
 
         // OBJEKT 'COOKIE'
-        console.clear();
+        // console.clear();
         console.log('document.cookie :>> ', document.cookie); // gibt nicht sein Objekt zurück, sondern die Inhalte
         // 
         document.cookie = 'test cookie';
