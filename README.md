@@ -80,6 +80,12 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
 - demo [16-js-file-api.html](TRAINER/16-js-file-api.html)
 - demo [16-js-file-api.txt](TRAINER/16-js-file-api.txt)
 
+## M017 | GEOLOCATION
+
+- demo [17-js-geo-und-andere-apis.html](TRAINER/17-js-geo-und-andere-apis.html)
+
+
+
 
 - [x] HTML Auffrischung
 - [x] HTML Syntax
@@ -120,8 +126,8 @@ Nachdem du ein Repo für ein konkretes Datum anhand von diesem Template erstellt
   - [x] Flex
   - mehr Themen zu Layout: column count, positioning, z-index, floating
 - [ ] JavaScript APIs verwenden
-  - [ ] Geolocation API
-  - [ ] FileReader API
+  - [x] Geolocation API
+  - [x] FileReader API
   - [ ] Web Worker API - öfter Service Worker
   - [ ] Web Storage API (DOM-Storage)
   - [ ] XmlHttpRequest 2 API (AJAX)

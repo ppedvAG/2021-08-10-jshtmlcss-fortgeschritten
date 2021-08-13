@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>20-JS-WINDOW-HISTORY</title>
 </head>
+
 <body>
     <h1>20-JS-WINDOW-HISTORY</h1>
     <pre>
@@ -29,33 +31,10 @@
     <a href="20-js-window-history2.html">20-js-window-history2.html</a>
 
     <h2>geolocation</h2>
-    google lässt sich nicht durch iframe oder embed anzuzeigen
-    <iframe src="https://www.google.de/maps/@52.51072,13.2784203,11z?hl=de&authuser=0" frameborder="0" width="500" height="400"></iframe>
-    <embed src="https://www.google.de/maps/@52.51072,13.2784203,11z?hl=de&authuser=0" type="" width="500" height="400">
-        <a href="" id="cottbus">GO COTTBUS</a>
-        
-        
-        <script>
-            document.getElementById('cottbus').href = 'https://www.google.de/maps/place/Cottbus'
-            // document.getElementById('cottbus').href = 'https://www.google.de/maps/place/Cottbus/@51.7783842,14.2472191'
-            // https://www.google.de/maps/@51.7783842,14.2472191
-        </script>
+    <p id="longitude">longitude: </p>
+    <p id="latitude">latitude: </p>
 
-        <h2>input: file</h2>
-        <input type="file" name="fileInpName" id="fileInpId">
-        
     <script>
-        console.log('Object.getOwnPropertyNames(window) :>> ', Object.getOwnPropertyNames(window)); // Array(982), in FF 819
-
-        // Window ist ein Konstruktor und hat die Keys, wie bei einer Funktion
-        console.log('Object.getOwnPropertyNames(Window) :>> ', Object.getOwnPropertyNames(Window)); // (7) ["length", "name", "arguments", "caller", "prototype", "TEMPORARY", "PERSISTENT"]
-        
-  
-        // WINDOW.NAVIGATOR
-        console.log('navigator :>> ', navigator); // Navigator {vendorSub: "", productSub: "20030107", vendor: "Google Inc.", maxTouchPoints: 10, userActivation: UserActivation, …}
-        console.log('Object.getOwnPropertyNames(navigator) :>> ', Object.getOwnPropertyNames(navigator)); // []
-
-
         // WINDOW.NAVIGATOR.GEOLOCATION
         console.log('navigator.geolocation :>> ', navigator.geolocation); // Geolocation {}
         /* ein leeres Objekt:
@@ -73,8 +52,11 @@
 
         // Success-Callback bei getCurrentPosition() bekommt folgendes Objekt:
         /* 
-        GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1628252495260}
-            coords: GeolocationCoordinates
+        GeolocationPosition {
+            coords: GeolocationCoordinates, 
+            timestamp: 1628252495260
+        }
+        coords: GeolocationCoordinates {            
             accuracy: 213
             altitude: null
             altitudeAccuracy: null
@@ -82,20 +64,60 @@
             latitude: 52.478616
             longitude: 13.44463
             speed: null
-            */            
+        }
+            */
 
 
         // bei getCurrentPosition wird Browser fragen, ob er auf Position zugreifen darf
-        let geoReturn = navigator.geolocation.getCurrentPosition((coords) => { 
+        let geoReturn = navigator.geolocation.getCurrentPosition((position) => {
             console.log('geo erfolg'); // kommt später in die Konsole - Abfragen von Pos ist asynchron
-            console.log('coords :>> ', coords); // GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1628252495260}
+            console.log('position :>> ', position); // GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1628252495260}
             // ermittelt:  latitude: 52.478616, longitude: 13.44463
             // tatsächlichen: // @52.4786232, 13.442456,
-        }, 
-        () => {
-            console.log('geo miserfolg');            
-        })
+            latitude.textContent += position.coords.latitude;
+            longitude.textContent += position.coords.longitude;
+        },
+            () => {
+                console.log('geo miserfolg');
+            })
         console.log('geoReturn :>> ', geoReturn); // undefined
+
+    </script>
+
+    google lässt sich nicht durch iframe oder embed anzuzeigen
+    <iframe src="https://www.google.de/maps/@52.51072,13.2784203,11z?hl=de&authuser=0" frameborder="0" width="500"
+        height="400"></iframe>
+    <embed src="https://www.google.de/maps/@52.51072,13.2784203,11z?hl=de&authuser=0" type="" width="500" height="400">
+    <a href="" id="cottbus">GO COTTBUS</a>
+    <script>
+
+        document.getElementById('cottbus').href = 'https://www.google.de/maps/place/Cottbus'
+        // document.getElementById('cottbus').href = 'https://www.google.de/maps/place/Cottbus/@51.7783842,14.2472191'
+        // https://www.google.de/maps/@51.7783842,14.2472191
+    </script>
+
+
+    <hr>
+    <h2>input: file</h2>
+    <input type="file" name="fileInpName" id="fileInpId">
+
+    <script>
+
+
+
+
+        console.log('Object.getOwnPropertyNames(window) :>> ', Object.getOwnPropertyNames(window)); // Array(982), in FF 819
+
+        // Window ist ein Konstruktor und hat die Keys, wie bei einer Funktion
+        console.log('Object.getOwnPropertyNames(Window) :>> ', Object.getOwnPropertyNames(Window)); // (7) ["length", "name", "arguments", "caller", "prototype", "TEMPORARY", "PERSISTENT"]
+
+
+        // WINDOW.NAVIGATOR
+        console.log('navigator :>> ', navigator); // Navigator {vendorSub: "", productSub: "20030107", vendor: "Google Inc.", maxTouchPoints: 10, userActivation: UserActivation, …}
+        console.log('Object.getOwnPropertyNames(navigator) :>> ', Object.getOwnPropertyNames(navigator)); // []
+
+
+
 
 
 
@@ -126,7 +148,7 @@
             constructor: ƒ Location()
             Symbol(Symbol.toStringTag): "Location"
          */
-        
+
         // WINDOW.HISTORY
         console.log('history :>> ', history); // 
         /* 
@@ -169,7 +191,7 @@ pixelDepth: 24
 width: 1920
  */
         console.log('Object.getOwnPropertyNames(screen) :>> ', Object.getOwnPropertyNames(screen)); // []
-        /* 
+        /*
         [[Prototype]]: Screen
 availHeight: (...)
 availLeft: (...)
@@ -195,4 +217,5 @@ get width: ƒ width()
          */
     </script>
 </body>
+
 </html>
