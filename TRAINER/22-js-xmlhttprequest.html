@@ -1,27 +1,24 @@
 ﻿<!DOCTYPE html>
 <html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-	<meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>22-js-xmlhttprequest</title>
+    <meta charset="utf-8" />
     <script>
         var req;
-
         function doIt() {
-
             // erstellen des requests
             req = new XMLHttpRequest();
 
             // Anfrage erstellen ( GET, URL, Sync/async )
             var url = "https://jsonplaceholder.typicode.com/todos/1";
             req.open("GET", url, true);
-
             req.setRequestHeader("Content-Type", "text/xml");
             req.send(null);
 
             // Beim abschliessen des request wird diese funktion ausgeführt
             req.onreadystatechange = function () {
-
                 if (req.readyState == 4) {
                     if (req.status != 200) {
                         alert("Fehler: " + req.status);
@@ -33,12 +30,9 @@
                     }
                 }
             };
-
         }
-
     </script>
-
-<!--[if gte mso 9]><xml>
+    <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
 <mso:_dlc_DocId msdt:dt="string">QCVKMJJWM3PQ-1355832870-201</mso:_dlc_DocId>
 <mso:_dlc_DocIdItemGuid msdt:dt="string">61444682-904b-4a1f-8bf2-83e692677c10</mso:_dlc_DocIdItemGuid>
@@ -46,11 +40,12 @@
 </mso:CustomDocumentProperties>
 </xml><![endif]-->
 </head>
+
 <body>
-
+    <h1>22-js-xmlhttprequest</h1>
     <div id="eins" style="width: 80%; height: 80%; border: 1px dashed black;">
-        <input type="button" onclick="doIt();"value="Starte" />
+        <input type="button" onclick="doIt();" value="Starte" />
     </div>
-
 </body>
+
 </html>
