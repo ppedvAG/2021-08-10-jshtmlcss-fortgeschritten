@@ -5,19 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>21 SERVICE WORKER</title>
+    <title>19 SERVICE WORKER</title>
+    <style>
+        body {
+            font-size: large;
+        }
+        img {
+            border: thin solid;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>21 SERVICE WORKER</h1>
+    <h1>19 SERVICE WORKER</h1>
 
-    <p>neue Änderung</p>
-    <a href="15-html-audio.html">15-html-audio.html</a>
-    
+    <!--<a href="15-html-audio.html">15-html-audio.html</a> -->
+    <p>
+        SZENARIO: bei Offline, wird nicht die Offline-Seite vom Browser 'Kein Internet', 
+        sondern die von uns vorbereitete Seite angezeigt.
+    </p>
+    <img src="./media/19-offline-page.png" alt="offline-page">
+    <hr>
+    <p>Wichtig dabei, KEIN Häckchen bei 'Umgehen für Netzwerk' oder 'Bypass for network' gesetzt zu haben.
+        Wenn die Option aktiviert ist, wird der Service Worker ignoriert, was wir nicht wollen.
+    </p>
+    <img src="./media/19-sw-umgehen.png" alt="Umgehen für Netzwerk">
  
     <script>
-        // make sure, sw are supported
-        if ('serviceWorker' in navigator) {
+         
+        if ('serviceWorker' in navigator) { // prüfen, dass der Browser den SW unterstützt
             // console.log('service worker supported')
             window.addEventListener('load', () => {
                 navigator.serviceWorker
